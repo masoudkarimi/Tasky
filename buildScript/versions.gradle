@@ -1,0 +1,28 @@
+ext {
+    build = [
+            compileSdk: 31,
+            buildTools: '30.0.3',
+            targetSdk : 31,
+            minSdk    : 21
+    ]
+
+    versionning = [
+            major: 1,
+            minor: 0,
+            patch: 0,
+    ]
+
+    app = [
+            versionName: "${versionning.major}.${versionning.minor}.${versionning.patch}",
+            versionCode: (versionning.major * 10000) + (versionning.minor * 100) + versionning.patch,
+            gradle     : "7.0.3",
+            kotlin     : "1.5.31"
+    ]
+
+    libVersions = [
+            androidxCoreKtx: "1.7.0",
+            appcompat             : "1.4.0",
+            material              : "1.4.0",
+            constraintlayout      : "2.1.2",
+    ]
+}
