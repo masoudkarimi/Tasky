@@ -7,6 +7,7 @@ apply from: "$rootDir/buildScript/versions.gradle"
 
 android {
     compileSdk build.compileSdk
+    buildToolsVersion  build.buildTools
 
     defaultConfig {
         applicationId "mkn.tasky"

@@ -1,7 +1,7 @@
 ext {
     build = [
             compileSdk: 31,
-            buildTools: '30.0.3',
+            buildTools: '31.0.0',
             targetSdk : 31,
             minSdk    : 21
     ]
