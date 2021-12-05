@@ -3,7 +3,7 @@ plugins {
     id 'kotlin-android'
 }
 
-apply from: "$rootDir/buildScript/versions.gradle"
+apply from: "$rootDir/buildScript/dependencies.gradle"
 
 android {
     compileSdk build.compileSdk
@@ -15,8 +15,6 @@ android {
         targetSdk build.targetSdk
         versionCode app.versionCode
         versionName app.versionName
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -35,12 +33,8 @@ android {
 }
 
 dependencies {
-
-    implementation "androidx.core:core-ktx:$libVersions.androidxCoreKtx"
-    implementation "androidx.appcompat:appcompat:$libVersions.appcompat"
-    implementation "com.google.android.material:material:$libVersions.material"
-    implementation "androidx.constraintlayout:constraintlayout:$libVersions.constraintlayout"
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation coreKtx
+    implementation appcompat
+    implementation material
+    implementation constraintlayout
 }
