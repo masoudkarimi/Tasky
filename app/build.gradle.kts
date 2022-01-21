@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk = AndroidSdk.compile
-    buildToolsVersion = AndroidSdk.buildTools
+    compileSdk = extra["compileSdkVersion"] as Int
+    buildToolsVersion = extra["buildToolsVersion"] as String
     defaultConfig {
         applicationId = "mkn.tasky"
-        minSdk = AndroidSdk.min
-        targetSdk = AndroidSdk.target
+        minSdk = extra["minSdkVersion"] as Int
+        targetSdk = extra["targetSdkVersion"] as Int
         versionCode = 1
         versionName = "1.0.0"
     }

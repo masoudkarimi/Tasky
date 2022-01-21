@@ -1,23 +1,8 @@
 const val kotlinVersion = "1.6.10"
 
 object BuildPlugins {
-
-    object Versions {
-        const val buildToolsVersion = "7.0.3"
-    }
-
-    const val androidGradlePlugin = "com.android.tools.build:gradle:${Versions.buildToolsVersion}"
-    const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     const val androidApplication = "com.android.application"
     const val kotlinAndroid = "kotlin-android"
-
-}
-
-object AndroidSdk {
-    const val min = 21
-    const val compile = 31
-    const val target = compile
-    const val buildTools = "31.0.0"
 }
 
 object Libraries {
