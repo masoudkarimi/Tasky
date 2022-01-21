@@ -7,4 +7,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Tasky"
-include ':app'
+include(
+    ":app"
+)
