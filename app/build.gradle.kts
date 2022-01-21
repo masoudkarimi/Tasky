@@ -1,3 +1,5 @@
+import com.android.build.api.dsl.AndroidSourceSet
+
 plugins {
     id(BuildPlugins.androidApplication)
     id(BuildPlugins.kotlinAndroid)
@@ -12,6 +14,13 @@ android {
         targetSdk = extra["targetSdkVersion"] as Int
         versionCode = 1
         versionName = "1.0.0"
+    }
+
+    sourceSets {
+        this as NamedDomainObjectContainer<AndroidSourceSet>
+        Main.create(this)
+        TTest.create(this)
+        AndroidTest.create(this)
     }
 
     buildTypes {

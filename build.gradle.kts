@@ -18,6 +18,8 @@ subprojects {
     }
 }
 
-tasks.register("clean").configure {
-    delete("build")
+tasks {
+   register("clean", Delete::class ) {
+       delete(setOf(rootProject.buildDir))
+   }
 }
