@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tasky">
         <activity
+            android:theme="@style/Theme.Tasky.Starting"
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

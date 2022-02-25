@@ -20,6 +20,7 @@ object Libraries {
         const val coroutinesAndroid = "1.3.0"
         const val navigation = "2.3.5"
         const val material = "1.4.0"
+        const val splash = "1.0.0-beta01"
     }
 
     const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
@@ -28,6 +29,8 @@ object Libraries {
     const val constraintLayout =
         "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
     const val ktxCore = "androidx.core:core-ktx:${Versions.ktx}"
+
+    const val coreSplash = "androidx.core:core-splashscreen:${Versions.splash}"
 
     const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
     const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"

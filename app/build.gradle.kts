@@ -48,4 +48,5 @@ dependencies {
     implementation(Libraries.appCompat)
     implementation(Libraries.material)
     implementation(Libraries.constraintLayout)
+    implementation(Libraries.coreSplash)
 }
