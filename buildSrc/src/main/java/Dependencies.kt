@@ -1,10 +1,5 @@
 const val kotlinVersion = "1.6.10"
 
-object BuildPlugins {
-    const val androidApplication = "com.android.application"
-    const val kotlinAndroid = "kotlin-android"
-}
-
 object Libraries {
     private object Versions {
         const val constraintLayout = "2.1.2"
@@ -21,6 +16,7 @@ object Libraries {
         const val navigation = "2.3.5"
         const val material = "1.4.0"
         const val splash = "1.0.0-beta01"
+        const val javax = "10.0-b28"
     }
 
     const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
@@ -34,6 +30,8 @@ object Libraries {
 
     const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
     const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
+    const val javaxAnnotation = "org.glassfish:javax.annotation:${Versions.javax}"
+
 
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val retrofitGson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"

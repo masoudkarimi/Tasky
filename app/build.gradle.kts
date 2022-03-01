@@ -1,8 +1,8 @@
 import com.android.build.api.dsl.AndroidSourceSet
 
 plugins {
-    id(BuildPlugins.androidApplication)
-    id(BuildPlugins.kotlinAndroid)
+    id(Plugins.androidApplication)
+    id(Plugins.kotlinAndroid)
 }
 
 android {
@@ -49,4 +49,6 @@ dependencies {
     implementation(Libraries.material)
     implementation(Libraries.constraintLayout)
     implementation(Libraries.coreSplash)
+
+    implementation(project(":core:di"))
 }
