@@ -1,28 +1,19 @@
-import extensions.applyDefaults
+plugins {
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10")
-    }
+    /**
+     * You should use `apply false` in the top-level build.gradle file
+     * to add a Gradle plugin as a build dependency, but not apply it to the
+     * current (root) project. You should not use `apply false` in sub-projects.
+     * For more information, see
+     * Applying external plugins with same version to subprojects.
+     */
+
+    id(GradlePluginId.ANDROID_APPLICATION) version GradlePluginVersion.ANDROID_APPLICATION apply false
+    id(GradlePluginId.ANDROID_LIBRARY) version GradlePluginVersion.ANDROID_APPLICATION apply false
+    id(GradlePluginId.KOTLIN_ANDROID) version GradlePluginVersion.KOTLIN_ANDROID apply false
+    id(GradlePluginId.KOTLIN_KAPT) version GradlePluginVersion.KOTLIN_ANDROID apply false
 }
 
-allprojects {
-    repositories.applyDefaults()
-}
-
-subprojects {
-    apply {
-        from("$rootDir/versions.gradle.kts")
-    }
-}
-
-tasks {
-   register("clean", Delete::class ) {
-       delete(setOf(rootProject.buildDir))
-   }
+tasks.withType<Delete> {
+    delete(rootProject.buildDir)
 }

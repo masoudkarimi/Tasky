@@ -1,35 +1,30 @@
-import com.android.build.api.dsl.AndroidSourceSet
-
 plugins {
-    id(Plugins.androidApplication)
-    id(Plugins.kotlinAndroid)
+    id (GradlePluginId.ANDROID_APPLICATION)
+    id (GradlePluginId.KOTLIN_ANDROID)
 }
 
 android {
-    compileSdk = extra["compileSdkVersion"] as Int
-    buildToolsVersion = extra["buildToolsVersion"] as String
-    defaultConfig {
-        applicationId = "mkn.tasky"
-        minSdk = extra["minSdkVersion"] as Int
-        targetSdk = extra["targetSdkVersion"] as Int
-        versionCode = 1
-        versionName = "1.0.0"
-    }
+    compileSdk = AndroidConfig.COMPILE_SDK_VERSION
+    buildToolsVersion = AndroidConfig.BUILD_TOOLS_VERSION
 
-    sourceSets {
-        this as NamedDomainObjectContainer<AndroidSourceSet>
-        Main.create(this)
-        TTest.create(this)
-        AndroidTest.create(this)
+    defaultConfig {
+        applicationId = AndroidConfig.ID
+        minSdk = AndroidConfig.MIN_SDK_VERSION
+        targetSdk = AndroidConfig.TARGET_SDK_VERSION
+        buildToolsVersion = AndroidConfig.BUILD_TOOLS_VERSION
+
+        versionCode = AndroidConfig.VERSION_CODE
+        versionName = AndroidConfig.VERSION_NAME
     }
 
     buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+        getByName(BuildType.RELEASE) {
+            isMinifyEnabled = BuildTypeRelease.isMinifyEnabled
+            proguardFiles("proguard-android.txt", "proguard-rules.pro")
+        }
+
+        getByName(BuildType.DEBUG) {
+            isMinifyEnabled = BuildTypeDebug.isMinifyEnabled
         }
     }
 
@@ -44,11 +39,5 @@ android {
 }
 
 dependencies {
-    implementation(Libraries.ktxCore)
-    implementation(Libraries.appCompat)
-    implementation(Libraries.material)
-    implementation(Libraries.constraintLayout)
-    implementation(Libraries.coreSplash)
 
-    implementation(project(":core:di"))
 }

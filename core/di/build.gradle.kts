@@ -1,11 +1,11 @@
 plugins {
-    id(Plugins.androidLibrary)
-    id(Plugins.kotlinAndroid)
-    kotlin(Plugins.kotlinKapt)
+    id (GradlePluginId.ANDROID_LIBRARY)
+    id (GradlePluginId.KOTLIN_ANDROID)
+    id (GradlePluginId.KOTLIN_KAPT)
 }
 
 android {
-    compileSdk = extra["compileSdkVersion"] as Int
+    compileSdk = AndroidConfig.COMPILE_SDK_VERSION
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -14,8 +14,5 @@ android {
 }
 
 dependencies {
-    implementation(Libraries.lifecycleViewModelKtx)
 
-    implementation(Libraries.dagger)
-    kapt(Libraries.daggerCompiler)
 }
