@@ -14,6 +14,24 @@ plugins {
     id(GradlePluginId.KOTLIN_KAPT) version GradlePluginVersion.KOTLIN_ANDROID apply false
 }
 
+// all projects = root project + sub projects
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    // Gradle dependency locking - lock all configurations of the app
+    // More: https://docs.gradle.org/current/userguide/dependency_locking.html
+    dependencyLocking {
+        lockAllConfigurations()
+    }
+}
+
+subprojects {
+
+}
+
 tasks.withType<Delete> {
     delete(rootProject.buildDir)
 }
