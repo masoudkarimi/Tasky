@@ -39,5 +39,9 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.appCompat)
+    implementation(libs.androidx.ktx)
+    implementation(libs.material)
+    implementation(libs.constraintlayout)
+    implementation(libs.splash)
 }

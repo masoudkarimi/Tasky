@@ -47,6 +47,7 @@ dependencyResolutionManagement {
 
             alias("kotlinStd").to("org.jetbrains.kotlin", "kotlin-stdlib-jdk8").versionRef("kotlin")
             alias("appCompat").to("androidx.appcompat", "appcompat").versionRef("appcompat")
+            alias("splash").to("androidx.core", "core-splashscreen").versionRef("splash")
             alias("material").to("com.google.android.material", "material").versionRef("material")
             alias("constraintlayout").to("androidx.constraintlayout", "constraintlayout").versionRef("constraintlayout")
             alias("androidx-ktx").to("androidx.core", "core-ktx").versionRef("androidx-ktx")
